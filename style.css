@@ -1,19 +1,18 @@
-/* div {
+div {
   border: 1px solid red;
 }
- */
+
 body {
   font: 1rem/1.3 "Roboto", sans-serif;
   background: var(--bg_main);
   color: var(--text_dark);
-  padding: 50px;
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 /* 15px */;
   display: flex;
   justify-content: center;
 }
@@ -27,7 +26,7 @@ body {
 }
 
 .weather-card .city-list {
-    height: 100%;
+  height: 100%;
 }
 
 .weather-card .city-el {
@@ -45,24 +44,26 @@ body {
 }
 
 .weather-card .forecast-bar {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .weather-card .forecast-bar .day {
-    margin: 1vh;
-    font-size: 0.7rem;
 }
+
 .weather-card .forecast-bar .day > div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.weather-card .forecast-bar .day .temp-minmax-little {
+  font-size: 0.7rem;
 }
 
 .weather-card .city-el .city-temp {
-    font-size: 10rem;
+  font-size: 25vh;
 }
 
 .weather-card .city-el .temp-min-max {
-    margin-bottom: 10rem;
+  margin-bottom: 40vh;
 }
