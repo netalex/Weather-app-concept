@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"emojisense.emojiDecoratorsEnabled": false,
+		"dotnetAcquisitionExtension.enableTelemetry": false
+	}
+}
