@@ -1,0 +1,11 @@
+{
+  "name": "testLuxotticaEmea",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": "https://netalex:Vonpisto1@github.com/netalex/Weather-app-concept.git",
+  "author": "Alessandro Aprile <aprile.alessandro@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "modern-css-reset": "^1.1.1"
+  }
+}
