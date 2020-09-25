@@ -1,5 +1,5 @@
 :root {
-  --bg_main: #0a1f44;
+  --bg_main: black;
   --text_light: #fff;
   --text_med: #53627c;
   --text_dark: #1e2432;
@@ -17,14 +17,6 @@ body {
   background: var(--bg_main);
   color: var(--text_light);
   max-height: 100vh;
-
-  background-image: url(asset/img/LosAngeles.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #464646;
-  backdrop-filter: blur(5px);
 }
 
 .container {
@@ -41,6 +33,27 @@ body {
 
 .weather-card {
   height: 100%;
+}
+.weather-card-background.one,
+.weather-card-background.two {
+    height: 100%;
+    width: 100%;
+    background: var(--bg_main);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #464646;
+    filter: blur(5px);
+    position: absolute;
+    z-index: -1;
+}
+
+.weather-card-background.one {
+  background-image: url(asset/img/LosAngeles.jpg);
+}
+
+.weather-card-background.two {
+  background-image: url(asset/img/sanFrancisco.jpg);
 }
 
 .weather-card .city-list {
@@ -104,7 +117,7 @@ body {
 }
 
 .swiper-container .swiper-pagination {
-    top: 1rem;
+  top: 1rem;
 }
 .swiper-container .swiper-pagination .swiper-pagination-bullet {
   /* color: var(--text_light); */
