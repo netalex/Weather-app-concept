@@ -13,81 +13,164 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 
 
 </head>
 
 <body>
 
-    <section class="weather-card">
-        <div class="container">
-            <ul class="city-list my-slider">
-                <li class="city">
+    <section class="weather-card ">
+        <div class="container swiper-container">
+            <ul class="city-list swiper-wrapper">
+                <li class="city swiper-slide">
                     <div class="city-el">
-                        <div class="city-name">
-                            <h2>los angeles</h2>
-                        </div>
-                        <div class="w-type">
-                            <p>sunny</p>
-                        </div>
-                        <div class="city-temp">
-                            <p>36°</p>
-                        </div>
-                        <div class="temp-min-max">
-                            <p>19°/38°</p>
-                        </div>
-                        <div class="forecast-bar">
-                            <div class="sun day">
-                                <div class="day-name"><p>sun</p></div>
-                                <div class="w-ico">
-                                    <i class="wi wi-day-sunny"></i>
-                                </div>
-                                <div class="temp-minmax-little">
-                                    <p>19°/31°</p>
-                                </div>
+                        <div class="city-card">
+                            <div class="city-name">
+                                <h2>los angeles</h2>
                             </div>
-                            <div class="mon day"><div class="day-name"><p>sun</p></div>
-                                <div class="w-ico">
-                                    <i class="wi wi-day-sunny"></i>
+                            <div class="w-type">
+                                <p>sunny</p>
+                            </div>
+                            <div class="city-temp">
+                                <p>36°</p>
+                            </div>
+                            <div class="temp-min-max">
+                                <p>19°/38°</p>
+                            </div>
+                        </div>
+                        <div class="bar-container">
+                            <div class="forecast-bar">
+                                <div class="sun day">
+                                    <div class="day-name"><p>sun</p></div>
+                                    <div class="w-ico">
+                                        <i class="wi wi-day-sunny"></i>
+                                    </div>
+                                    <div class="temp-minmax-little">
+                                        <p>19°/31°</p>
+                                    </div>
                                 </div>
-                                <div class="temp-minmax-little">
-                                    <p>19°/31°</p>
-                                </div></div>
-                            <div class="tue day"><div class="day-name"><p>sun</p></div>
-                                <div class="w-ico">
-                                    <i class="wi wi-day-sunny"></i>
+                                <div class="mon day"><div class="day-name"><p>sun</p></div>
+                                    <div class="w-ico">
+                                        <i class="wi wi-day-sunny"></i>
+                                    </div>
+                                    <div class="temp-minmax-little">
+                                        <p>19°/31°</p>
+                                    </div></div>
+                                <div class="tue day"><div class="day-name"><p>sun</p></div>
+                                    <div class="w-ico">
+                                        <i class="wi wi-day-sunny"></i>
+                                    </div>
+                                    <div class="temp-minmax-little">
+                                        <p>19°/31°</p>
+                                    </div></div>
+                                <div class="wed day"><div class="day-name"><p>sun</p></div>
+                                    <div class="w-ico">
+                                        <i class="wi wi-day-sunny"></i>
+                                    </div>
+                                    <div class="temp-minmax-little">
+                                        <p>19°/31°</p>
+                                    </div></div>
+                                <div class="thu day"><div class="day-name"><p>sun</p></div>
+                                    <div class="w-ico">
+                                        <i class="wi wi-day-sunny"></i>
+                                    </div>
+                                    <div class="temp-minmax-little">
+                                        <p>19°/31°</p>
+                                    </div></div>
+                                <div class="fri day"><div class="day-name"><p>sun</p></div>
+                                    <div class="w-ico">
+                                        <i class="wi wi-day-sunny"></i>
+                                    </div>
+                                    <div class="temp-minmax-little">
+                                        <p>19°/31°</p>
+                                    </div></div>
+                                <div class="sat day"><div class="day-name"><p>sun</p></div>
+                                    <div class="w-ico">
+                                        <i class="wi wi-day-sunny"></i>
+                                    </div>
+                                    <div class="temp-minmax-little">
+                                        <p>19°/31°</p>
+                                    </div></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="city swiper-slide">
+                    <div class="city-el">
+                        <div class="city-card">
+                            <div class="city-name">
+                                <h2>San Francisco</h2>
+                            </div>
+                            <div class="w-type">
+                                <p>sunny</p>
+                            </div>
+                            <div class="city-temp">
+                                <p>28°</p>
+                            </div>
+                            <div class="temp-min-max">
+                                <p>12°/38°</p>
+                            </div>
+                        </div>
+                        <div class="bar-container">
+                            <div class="forecast-bar">
+                                <div class="sun day">
+                                    <div class="day-name"><p>sun</p></div>
+                                    <div class="w-ico">
+                                        <i class="wi wi-day-sunny"></i>
+                                    </div>
+                                    <div class="temp-minmax-little">
+                                        <p>19°/31°</p>
+                                    </div>
                                 </div>
-                                <div class="temp-minmax-little">
-                                    <p>19°/31°</p>
-                                </div></div>
-                            <div class="wed day"><div class="day-name"><p>sun</p></div>
-                                <div class="w-ico">
-                                    <i class="wi wi-day-sunny"></i>
-                                </div>
-                                <div class="temp-minmax-little">
-                                    <p>19°/31°</p>
-                                </div></div>
-                            <div class="thu day"><div class="day-name"><p>sun</p></div>
-                                <div class="w-ico">
-                                    <i class="wi wi-day-sunny"></i>
-                                </div>
-                                <div class="temp-minmax-little">
-                                    <p>19°/31°</p>
-                                </div></div>
-                            <div class="fri day"><div class="day-name"><p>sun</p></div>
-                                <div class="w-ico">
-                                    <i class="wi wi-day-sunny"></i>
-                                </div>
-                                <div class="temp-minmax-little">
-                                    <p>19°/31°</p>
-                                </div></div>
-                            <div class="sat day"><div class="day-name"><p>sun</p></div>
-                                <div class="w-ico">
-                                    <i class="wi wi-day-sunny"></i>
-                                </div>
-                                <div class="temp-minmax-little">
-                                    <p>19°/31°</p>
-                                </div></div>
+                                <div class="mon day"><div class="day-name"><p>sun</p></div>
+                                    <div class="w-ico">
+                                        <i class="wi wi-day-sunny"></i>
+                                    </div>
+                                    <div class="temp-minmax-little">
+                                        <p>19°/31°</p>
+                                    </div></div>
+                                <div class="tue day"><div class="day-name"><p>sun</p></div>
+                                    <div class="w-ico">
+                                        <i class="wi wi-day-sunny"></i>
+                                    </div>
+                                    <div class="temp-minmax-little">
+                                        <p>19°/31°</p>
+                                    </div></div>
+                                <div class="wed day"><div class="day-name"><p>sun</p></div>
+                                    <div class="w-ico">
+                                        <i class="wi wi-day-sunny"></i>
+                                    </div>
+                                    <div class="temp-minmax-little">
+                                        <p>19°/31°</p>
+                                    </div></div>
+                                <div class="thu day"><div class="day-name"><p>sun</p></div>
+                                    <div class="w-ico">
+                                        <i class="wi wi-day-sunny"></i>
+                                    </div>
+                                    <div class="temp-minmax-little">
+                                        <p>19°/31°</p>
+                                    </div></div>
+                                <div class="fri day"><div class="day-name"><p>sun</p></div>
+                                    <div class="w-ico">
+                                        <i class="wi wi-day-sunny"></i>
+                                    </div>
+                                    <div class="temp-minmax-little">
+                                        <p>19°/31°</p>
+                                    </div></div>
+                                <div class="sat day"><div class="day-name"><p>sun</p></div>
+                                    <div class="w-ico">
+                                        <i class="wi wi-day-sunny"></i>
+                                    </div>
+                                    <div class="temp-minmax-little">
+                                        <p>19°/31°</p>
+                                    </div></div>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -96,5 +179,9 @@
     </section>
 
 </body>
+
+<script>
+    let mySwiper = new Swiper('.swiper-container');
+</script>
 
 </html>
