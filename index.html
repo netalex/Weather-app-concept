@@ -29,7 +29,8 @@
         <div class="container swiper-container">
             <div class="swiper-pagination"></div>
             <ul class="city-list swiper-wrapper">
-                <li class="city swiper-slide">
+                <li class="city swiper-slide one">
+                    <div class="weather-card-background one"></div>
                     <div class="city-el">
                         <div class="city-card">
                             <div class="city-name">
@@ -128,7 +129,8 @@
                         </div>
                     </div>
                 </li>
-                <li class="city swiper-slide">
+                <li class="city swiper-slide two">
+                    <div class="weather-card-background two"></div>
                     <div class="city-el">
                         <div class="city-card">
                             <div class="city-name">
@@ -238,8 +240,14 @@
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
+            speed: 1000,
+            parallax: true,
+            grabCursor: true,
+            centeredSlides: true,
         },
     });
 </script>
+
+<script type="text/javascript" src="./asset/js/index.js"></script>
 
 </html>
