@@ -1,13 +1,12 @@
 :root {
-    --bg_main: #0a1f44;
-    --text_light: #fff;
-    --text_med: #53627c;
-    --text_dark: #1e2432;
-    --red: #ff1e42;
-    --darkred: #c3112d;
-    --orange: #ff8c00;
-  }
-
+  --bg_main: #0a1f44;
+  --text_light: #fff;
+  --text_med: #53627c;
+  --text_dark: #1e2432;
+  --red: #ff1e42;
+  --darkred: #c3112d;
+  --orange: #ff8c00;
+}
 
 /* div {
   border: 1px solid red;
@@ -18,7 +17,6 @@ body {
   background: var(--bg_main);
   color: var(--text_light);
   max-height: 100vh;
-
 
   background-image: url(asset/img/LosAngeles.jpg);
   background-position: center center;
@@ -58,27 +56,27 @@ body {
 }
 
 .weather-card .city-el .city-card {
-    display: flex;
-    flex-direction: column;
-    height: 100vw;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  height: 100vw;
+  justify-content: space-evenly;
 }
 
 .weather-card .city-el .city-name,
 .weather-card .city-el .w-type,
 .weather-card .city-el .city-temp,
 .weather-card .city-el .temp-min-max {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-.weather-card .city-el .city-name{
-    margin-top: 10%;
+.weather-card .city-el .city-name {
+  margin-top: 10%;
 }
 .weather-card .bar-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
 }
 
 .weather-card .forecast-bar {
@@ -103,5 +101,12 @@ body {
 }
 
 .weather-card .city-el .temp-min-max {
+}
 
+.swiper-container .swiper-pagination {
+    top: 1rem;
+}
+.swiper-container .swiper-pagination .swiper-pagination-bullet {
+  /* color: var(--text_light); */
+  background-color: var(--text_light);
 }
