@@ -26,7 +26,7 @@
 <body>
 
     <section class="weather-card ">
-        <div class="container swiper-container">
+        <div class="container swiper-container parallax-slider">
             <div class="swiper-pagination"></div>
             <ul class="city-list swiper-wrapper">
                 <li class="city swiper-slide one">
@@ -236,16 +236,35 @@
 </body>
 
 <script>
-    let mySwiper = new Swiper('.swiper-container',{
+    const parallaxSliderOptions = {
+        speed: 1000,
+        parallax: true,
+        grabCursor: true,
+        centeredSlides: true,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
-            speed: 1000,
-            parallax: true,
-            grabCursor: true,
-            centeredSlides: true,
         },
-    });
+        on: {
+            init: function() {
+                const swiper = this;
+                console.log('swiper', swiper);
+                console.log('swiper.slides', swiper.slides);
+                console.log('PIPPO', swiper.slides.length);
+                for (let i = 0; i < swiper.slides.length; i++) {
+                    console.log( i, swiper.slides[i] );
+                    let el = swiper.slides[i].querySelectorAll('.weather-card-background');
+                    console.log('el', el);
+                    el[0].setAttribute('data-swiper-parallax', 0.01 * swiper.width);
+                    el[0].setAttribute('data-swiper-opacity', 0.5)
+
+                }
+            }
+        }
+    }
+    let mySwiper = new Swiper('.swiper-container.parallax-slider', parallaxSliderOptions);
+    console.log('slides', mySwiper.slides);
+
 </script>
 
 <script type="text/javascript" src="./asset/js/index.js"></script>
