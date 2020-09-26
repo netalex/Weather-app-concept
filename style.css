@@ -7,8 +7,12 @@
   --darkred: #c3112d;
   --orange: #ff8c00;
 }
+/* p{
+  margin: 0; padding: 0;
+  border: 1px solid green;
+}
 
-/* div {
+div {
   border: 1px solid red;
 }
  */
@@ -28,92 +32,167 @@ body {
   justify-content: center;
 }
 
-/* weather card section
+/* text section
+----------------*/
+
+.text-level {
+  z-index: 22;
+  position: absolute;
+  text-align: center;
+}
+.icon {
+  height: 2rem;
+  width: 2rem;
+  font-size: 2rem;
+  line-height: 2rem;
+  top: 10vh;
+}
+.gear {
+  right: 5vh;
+}
+.plus {
+  left: 5vh;
+}
+
+.city-card {
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.city-name {
+  font-weight: bold;
+}
+
+.temp {
+  font-size: 5rem;
+  line-height: 4.5rem;
+}
+.temp span {
+  font-weight: 300;
+  font-size: 4.5rem;
+}
+
+.w-type, .min-max {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.min-max {
+  font-size: 0.7rem;
+}
+
+.text {
+  position: absolute;
+  top: 0;
+  right: calc(100vh-25vh / 2);
+  /* z-index: 12; */
+  width: 25vh;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* background section
   ----------------------*/
 
-.weather-card {
-  height: 100%;
-}
-.weather-card-background.one,
-.weather-card-background.two {
-    height: 100%;
-    width: 100%;
-    background: var(--bg_main);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #464646;
-    filter: blur(5px);
-    position: absolute;
-    z-index: -1;
+.background-slider {
+  height: 100vh;
+  width: 100vw;
+  background-color: green;
 }
 
-.weather-card-background.one {
+.background-img.one,
+.background-img.two {
+  height: 100vh;
+  width: 100vw;
+  min-height: 100%;
+  min-width: 100%;
+  background: var(--bg_main);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #464646;
+  filter: blur(5px);
+  /* position: absolute; */
+  /* z-index: -1; */
+}
+
+.background-img.one {
   background-image: url(asset/img/LosAngeles.jpg);
 }
 
-.weather-card-background.two {
+.background-img.two {
   background-image: url(asset/img/sanFrancisco.jpg);
 }
 
-.weather-card .city-list {
+.background-img .city-list {
   height: 100%;
   width: 100%;
 }
 
-.weather-card .city-el {
+.background-img .city-el {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
 }
 
-.weather-card .city-el .city-card {
+.background-img .city-el .city-card {
   display: flex;
   flex-direction: column;
   height: 100vw;
   justify-content: space-evenly;
 }
 
-.weather-card .city-el .city-name,
-.weather-card .city-el .w-type,
-.weather-card .city-el .city-temp,
-.weather-card .city-el .temp-min-max {
+.background-img .city-el .city-name,
+.background-img .city-el .w-type,
+.background-img .city-el .city-temp,
+.background-img .city-el .temp-min-max {
   display: flex;
   justify-content: center;
 }
-.weather-card .city-el .city-name {
+.background-img .city-el .city-name {
   margin-top: 10%;
 }
-.weather-card .bar-container {
+.background-img .bar-container {
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: center;
 }
 
-.weather-card .forecast-bar {
+.background-img .forecast-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.weather-card .forecast-bar .day {
+.background-img .forecast-bar .day {
 }
 
-.weather-card .forecast-bar .day > div {
+.background-img .forecast-bar .day > div {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.weather-card .forecast-bar .day .temp-minmax-little {
+.background-img .forecast-bar .day .temp-minmax-little {
   font-size: 0.7rem;
 }
 
-.weather-card .city-el .city-temp {
+.background-img .city-el .city-temp {
   font-size: 25vh;
 }
 
-.weather-card .city-el .temp-min-max {
+.background-img .city-el .temp-min-max {
 }
 
 .swiper-container .swiper-pagination {
