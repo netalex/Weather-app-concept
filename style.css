@@ -129,11 +129,9 @@ body {
 .background-slider {
   height: 100vh;
   width: 100vw;
-  background-color: green;
 }
 
-.background-img.one,
-.background-img.two {
+.background-img {
   height: 100vh;
   width: 100vw;
   min-height: 100%;
@@ -144,17 +142,16 @@ body {
   background-size: cover;
   background-color: #464646;
   filter: blur(5px);
-  /* position: absolute; */
-  /* z-index: -1; */
+  z-index: -1;
 }
 
 /* .background-img.one {
   background-image: url(asset/img/LosAngeles.jpg);
-} */
+}
 
 .background-img.two {
   background-image: url(asset/img/sanFrancisco.jpg);
-}
+} */
 
 /* swiper section
 ----------------*/
