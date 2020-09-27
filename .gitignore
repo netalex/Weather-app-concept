@@ -1,3 +1,5 @@
 /doc/openweathermap.md
 /.cache
 /dist
+node_modules
+
