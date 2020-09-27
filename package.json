@@ -6,10 +6,15 @@
   "author": "Alessandro Aprile <aprile.alessandro@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "date-fns": "^2.16.1",
     "modern-css-reset": "^1.1.1",
+    "parcel": "^1.12.4",
     "parcel-bundler": "^1.12.4"
   },
   "scripts": {
     "start": "parcel index.html"
-  }
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
 }
