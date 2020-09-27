@@ -2,6 +2,9 @@ import "regenerator-runtime/runtime";
 import startOfWeek from "date-fns/startOfWeek";
 import endOfWeek from "date-fns/endOfWeek";
 import fromUnixTime from 'date-fns/fromUnixTime'
+import images from '../img/*.jpg'
+const imgPath='../img';
+
 
 const today = new Date();
 const startDay = startOfWeek(today);
@@ -25,25 +28,26 @@ const defaultCityList = [
     cityName: "los angeles",
     lat: 45.4642,
     lon: -118.243683,
-    img: "/asset/img/LosAngeles.jpg"
+    img: `LosAngeles`
+    //      ../img/LosAngeles.jpg
   },
   {
     cityName: "san francisco",
     lat: 37.773972,
     lon: -122.431297,
-    img: "/asset/img/sanFrancisco.jpg",
+    img: `${imgPath}/sanFrancisco.jpg`
   },
   {
     cityName: "milano",
     lat: 45.4642,
     lon: 9.19,
-    img: "/asset/img/milano.jpg"
+    img: `${imgPath}/milano.jpg`
   },
   {
     cityName: "roma",
     lat: 41.902782,
     lon: 12.496366,
-    img: "/asset/img/roma.jpg"
+    img: `${imgPath}/roma.jpg`
   },
 ];
 
@@ -118,8 +122,6 @@ async function getWeatherData(citynamesArray, wApiK) {
 
       citynamesArray[i].today = td;
 
-      
-
 
     } catch (err) {
       console.log("error: ", err);
@@ -127,6 +129,9 @@ async function getWeatherData(citynamesArray, wApiK) {
   }
   console.log(resultArray);
   console.log(citynamesArray);
+
+  document.getElementById('bkg1').style.backgroundImage = `url(${images[citynamesArray[0].img]})`;
+
 
 }
 

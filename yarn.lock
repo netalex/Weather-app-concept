@@ -1083,6 +1083,14 @@ assert@^1.1.1:
     object-assign "^4.1.1"
     util "0.10.3"
 
+asset@^0.4.13:
+  version "0.4.13"
+  resolved "https://registry.yarnpkg.com/asset/-/asset-0.4.13.tgz#7dd7ede6ce9f96cacfb776fdf30bed58ff9ca60d"
+  integrity sha1-fdft5s6flsrPt3b98wvtWP+cpg0=
+  dependencies:
+    mkdirp "0.3.x"
+    request "1.9.5"
+
 assign-symbols@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/assign-symbols/-/assign-symbols-1.0.0.tgz#59667f41fadd4f20ccbc2bb96b8d4f7f78ec0367"
@@ -3263,6 +3271,11 @@ mixin-deep@^1.2.0:
     for-in "^1.0.2"
     is-extendable "^1.0.1"
 
+mkdirp@0.3.x:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.3.5.tgz#de3e5f8961c88c787ee1368df849ac4413eca8d7"
+  integrity sha1-3j5fiWHIjHh+4TaN+EmsRBPsqNc=
+
 mkdirp@^0.5.1, mkdirp@~0.5.1:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.5.tgz#d91cefd62d1436ca0f41620e251288d420099def"
@@ -4373,6 +4386,11 @@ request-promise-native@^1.0.5:
     request-promise-core "1.1.4"
     stealthy-require "^1.1.1"
     tough-cookie "^2.3.3"
+
+request@1.9.5:
+  version "1.9.5"
+  resolved "https://registry.yarnpkg.com/request/-/request-1.9.5.tgz#24084f6c377fc2f3368b53be0922bebe5d40afd6"
+  integrity sha1-JAhPbDd/wvM2i1O+CSK+vl1Ar9Y=
 
 request@^2.88.0:
   version "2.88.2"
