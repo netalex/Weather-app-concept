@@ -88,9 +88,49 @@ async function getWeatherData(citynamesArray, wApiK) {
             day = "SAT";
         }
 
+        let icon = "";
+        switch (dayEl.weather[0].icon) {
+          case "01d":
+            icon = "wi-day-sunny";
+            console.log(dayEl.weather[0].icon);
+            break;
+          case "02d":
+            icon = "wi-day-cloudy";
+            console.log(dayEl.weather[0].icon);
+            break;
+          case "03d":
+            icon = "wi-cloud";
+            console.log(dayEl.weather[0].icon);
+            break;
+          case "04d":
+            icon = "wi-day-cloudy-windy";
+            console.log(dayEl.weather[0].icon);
+            break;
+          case "09d":
+            icon = "wi-day-storm-showers";
+            console.log(dayEl.weather[0].icon);
+            break;
+          case "10d":
+            icon = "wi-day-rain";
+            console.log(dayEl.weather[0].icon);
+            break;
+          case "11d":
+            icon = "wi-day-thunderstorm";
+            console.log(dayEl.weather[0].icon);
+            break;
+          case "13d":
+            icon = "wi-day-snow";
+            console.log(dayEl.weather[0].icon);
+            break;
+          case "50d":
+            icon = "wi-day-fog";
+            console.log(dayEl.weather[0].icon);
+            break;
+        }
+
         td.week.push({
           dayName: day,
-          wType: dayEl.weather[0].icon,
+          wType: icon,
           min: dayEl.temp.min,
           max: dayEl.temp.max
         });
@@ -115,10 +155,17 @@ async function getWeatherData(citynamesArray, wApiK) {
     },
     on: {
       init: () => {
-        document.querySelector(".city-name").innerHTML = citynamesArray[0].cityName;
-        document.querySelector(".w-type").innerHTML = citynamesArray[0].today.wType;
-        document.querySelector(".temp").innerHTML = citynamesArray[0].today.temp.toFixed(1) + "<span>°</span>";
-        document.querySelector(".min-max").innerHTML = citynamesArray[0].today.min.toFixed(1) + "<span>°</span>/" + citynamesArray[0].today.max.toFixed(1) + "<span>°</span>";
+        document.querySelector(".city-name").innerHTML =
+          citynamesArray[0].cityName;
+        document.querySelector(".w-type").innerHTML =
+          citynamesArray[0].today.wType;
+        document.querySelector(".temp").innerHTML =
+          citynamesArray[0].today.temp.toFixed(1) + "<span>°</span>";
+        document.querySelector(".min-max").innerHTML =
+          citynamesArray[0].today.min.toFixed(1) +
+          "<span>°</span>/" +
+          citynamesArray[0].today.max.toFixed(1) +
+          "<span>°</span>";
       }
     },
     virtual: {
@@ -139,15 +186,29 @@ async function getWeatherData(citynamesArray, wApiK) {
   let mySwiper = new Swiper(".swiper-container", virtualSliderOptions);
 
   mySwiper.on("slideChange", () => {
-    document.querySelector(".city-name").innerHTML = citynamesArray[mySwiper.activeIndex].cityName;
-    document.querySelector(".w-type").innerHTML = citynamesArray[mySwiper.activeIndex].today.wType;
-    document.querySelector(".temp").innerHTML = citynamesArray[mySwiper.activeIndex].today.temp.toFixed(1) + "<span>°</span>";
-    document.querySelector(".min-max").innerHTML = citynamesArray[mySwiper.activeIndex].today.min.toFixed(1) + "<span>°</span>/" + citynamesArray[mySwiper.activeIndex].today.max.toFixed(1) + "<span>°</span>";
-    let forecastBar = document.querySelectorAll(".bar.text-level .bar-container .forecast-bar");
+    document.querySelector(".city-name").innerHTML =
+      citynamesArray[mySwiper.activeIndex].cityName;
+    document.querySelector(".w-type").innerHTML =
+      citynamesArray[mySwiper.activeIndex].today.wType;
+    document.querySelector(".temp").innerHTML =
+      citynamesArray[mySwiper.activeIndex].today.temp.toFixed(1) +
+      "<span>°</span>";
+    document.querySelector(".min-max").innerHTML =
+      citynamesArray[mySwiper.activeIndex].today.min.toFixed(1) +
+      "<span>°</span>/" +
+      citynamesArray[mySwiper.activeIndex].today.max.toFixed(1) +
+      "<span>°</span>";
+    let forecastBar = document.querySelectorAll(
+      ".bar.text-level .bar-container .forecast-bar"
+    );
     for (let i = 0; i < forecastBar.length; i++) {
       const element = forecastBar[i];
       // console.log(element);
-      for (let y = 0; y < citynamesArray[mySwiper.activeIndex].today.week.length; y++) {
+      for (
+        let y = 0;
+        y < citynamesArray[mySwiper.activeIndex].today.week.length;
+        y++
+      ) {
         // console.log("y", y);
         // console.log(citynamesArray[mySwiper.activeIndex].today.week[y].dayName);
         // console.log(element
@@ -155,11 +216,26 @@ async function getWeatherData(citynamesArray, wApiK) {
         //     [y].className.toString());
         // console.log("-----------------------------------");
         let element2 = element.getElementsByClassName("day")[y];
-        console.log(element2.children);
-        // element2.appendChild(`<p>${citynamesArray[mySwiper.activeIndex].today.week[y].dayName}</p>`);
-        element2.children[0].children[0].innerHTML = `${citynamesArray[mySwiper.activeIndex].today.week[y].dayName}`;
-        element2.children[1].children[0].innerHTML = `${citynamesArray[mySwiper.activeIndex].today.week[y].wType}`;
-        element2.children[2].children[0].innerHTML = `<p>${citynamesArray[mySwiper.activeIndex].today.week[y].min}<span>°</span>${citynamesArray[mySwiper.activeIndex].today.week[y].max}<span>°</span></p>`;
+
+        if (element2) {
+          console.log(element2.children);
+
+          element2.children[0].children[0].innerHTML = `${citynamesArray[
+            mySwiper.activeIndex
+          ].today.week[y].dayName}`;
+
+          console.log(`${citynamesArray[mySwiper.activeIndex].today.week[y].wType}`)
+
+          element2.children[1].children[0].classList.toggle(
+            `${citynamesArray[mySwiper.activeIndex].today.week[y].wType}`
+          );
+
+          element2.children[2].children[0].innerHTML = `<p>${citynamesArray[
+            mySwiper.activeIndex
+          ].today.week[y].min}<span>°</span>${citynamesArray[
+            mySwiper.activeIndex
+          ].today.week[y].max}<span>°</span></p>`;
+        }
       }
     }
   });
