@@ -1,14 +1,7 @@
 import "regenerator-runtime/runtime";
-// import startOfWeek from "date-fns/startOfWeek";
-// import endOfWeek from "date-fns/endOfWeek";
 import fromUnixTime from "date-fns/fromUnixTime";
 import images from "../img/*.jpg";
 const imgPath = "../img";
-
-// const today = new Date();
-// const startDay = startOfWeek(today);
-// const endDay = endOfWeek(today);
-// console.log(today, startDay, endDay);
 
 const openWeatherApiKey = "61041e80233a8a40dbfc8a80a89dc295";
 
@@ -122,14 +115,10 @@ async function getWeatherData(citynamesArray, wApiK) {
     },
     on: {
       init: () => {
-        document.querySelector('.city-name').innerHTML= citynamesArray[0].cityName;
-        document.querySelector('.w-type').innerHTML= citynamesArray[0].today.wType;
-        document.querySelector('.temp').innerHTML= (citynamesArray[0].today.temp).toFixed(1)+'<span>°</span>';
-        document.querySelector('.min-max').innerHTML=
-          (citynamesArray[0].today.min).toFixed(1)
-          +'<span>°</span>/'
-          +(citynamesArray[0].today.max).toFixed(1)
-          +'<span>°</span>';
+        document.querySelector(".city-name").innerHTML = citynamesArray[0].cityName;
+        document.querySelector(".w-type").innerHTML = citynamesArray[0].today.wType;
+        document.querySelector(".temp").innerHTML = citynamesArray[0].today.temp.toFixed(1) + "<span>°</span>";
+        document.querySelector(".min-max").innerHTML = citynamesArray[0].today.min.toFixed(1) + "<span>°</span>/" + citynamesArray[0].today.max.toFixed(1) + "<span>°</span>";
       }
     },
     virtual: {
@@ -149,20 +138,31 @@ async function getWeatherData(citynamesArray, wApiK) {
 
   let mySwiper = new Swiper(".swiper-container", virtualSliderOptions);
 
-  mySwiper.on('slideChange', () => {
-    document.querySelector('.city-name').innerHTML= citynamesArray[mySwiper.activeIndex].cityName;
-    document.querySelector('.w-type').innerHTML= citynamesArray[mySwiper.activeIndex].today.wType;
-    document.querySelector('.temp').innerHTML= (citynamesArray[mySwiper.activeIndex].today.temp).toFixed(1)+'<span>°</span>';
-    document.querySelector('.min-max').innerHTML=
-      (citynamesArray[mySwiper.activeIndex].today.min).toFixed(1)
-      +'<span>°</span>/'
-      +(citynamesArray[mySwiper.activeIndex].today.max).toFixed(1)
-      +'<span>°</span>';
-
-  })
-
-
-
+  mySwiper.on("slideChange", () => {
+    document.querySelector(".city-name").innerHTML = citynamesArray[mySwiper.activeIndex].cityName;
+    document.querySelector(".w-type").innerHTML = citynamesArray[mySwiper.activeIndex].today.wType;
+    document.querySelector(".temp").innerHTML = citynamesArray[mySwiper.activeIndex].today.temp.toFixed(1) + "<span>°</span>";
+    document.querySelector(".min-max").innerHTML = citynamesArray[mySwiper.activeIndex].today.min.toFixed(1) + "<span>°</span>/" + citynamesArray[mySwiper.activeIndex].today.max.toFixed(1) + "<span>°</span>";
+    let forecastBar = document.querySelectorAll(".bar.text-level .bar-container .forecast-bar");
+    for (let i = 0; i < forecastBar.length; i++) {
+      const element = forecastBar[i];
+      // console.log(element);
+      for (let y = 0; y < citynamesArray[mySwiper.activeIndex].today.week.length; y++) {
+        // console.log("y", y);
+        // console.log(citynamesArray[mySwiper.activeIndex].today.week[y].dayName);
+        // console.log(element
+        //     .getElementsByClassName("day")
+        //     [y].className.toString());
+        // console.log("-----------------------------------");
+        let element2 = element.getElementsByClassName("day")[y];
+        console.log(element2.children);
+        // element2.appendChild(`<p>${citynamesArray[mySwiper.activeIndex].today.week[y].dayName}</p>`);
+        element2.children[0].children[0].innerHTML = `${citynamesArray[mySwiper.activeIndex].today.week[y].dayName}`;
+        element2.children[1].children[0].innerHTML = `${citynamesArray[mySwiper.activeIndex].today.week[y].wType}`;
+        element2.children[2].children[0].innerHTML = `<p>${citynamesArray[mySwiper.activeIndex].today.week[y].min}<span>°</span>${citynamesArray[mySwiper.activeIndex].today.week[y].max}<span>°</span></p>`;
+      }
+    }
+  });
 }
 
 window.onload = function() {
