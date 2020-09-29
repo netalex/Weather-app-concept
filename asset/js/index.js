@@ -1,7 +1,6 @@
 import "regenerator-runtime/runtime";
 import fromUnixTime from "date-fns/fromUnixTime";
 import images from "../img/*.jpg";
-const imgPath = "../img";
 
 const openWeatherApiKey = "61041e80233a8a40dbfc8a80a89dc295";
 
@@ -155,17 +154,7 @@ async function getWeatherData(citynamesArray, wApiK) {
     },
     on: {
       init: () => {
-        document.querySelector(".city-name").innerHTML =
-          citynamesArray[0].cityName;
-        document.querySelector(".w-type").innerHTML =
-          citynamesArray[0].today.wType;
-        document.querySelector(".temp").innerHTML =
-          citynamesArray[0].today.temp.toFixed(1) + "<span>°</span>";
-        document.querySelector(".min-max").innerHTML =
-          citynamesArray[0].today.min.toFixed(1) +
-          "<span>°</span>/" +
-          citynamesArray[0].today.max.toFixed(1) +
-          "<span>°</span>";
+        updateText(0);
       }
     },
     virtual: {
@@ -183,20 +172,18 @@ async function getWeatherData(citynamesArray, wApiK) {
     }
   };
 
-  let mySwiper = new Swiper(".swiper-container", virtualSliderOptions);
-
-  mySwiper.on("slideChange", () => {
+  const updateText = (index) => {
     document.querySelector(".city-name").innerHTML =
-      citynamesArray[mySwiper.activeIndex].cityName;
+      citynamesArray[index].cityName;
     document.querySelector(".w-type").innerHTML =
-      citynamesArray[mySwiper.activeIndex].today.wType;
+      citynamesArray[index].today.wType;
     document.querySelector(".temp").innerHTML =
-      citynamesArray[mySwiper.activeIndex].today.temp.toFixed(1) +
+      citynamesArray[index].today.temp.toFixed(1) +
       "<span>°</span>";
     document.querySelector(".min-max").innerHTML =
-      citynamesArray[mySwiper.activeIndex].today.min.toFixed(1) +
+      citynamesArray[index].today.min.toFixed(1) +
       "<span>°</span>/" +
-      citynamesArray[mySwiper.activeIndex].today.max.toFixed(1) +
+      citynamesArray[index].today.max.toFixed(1) +
       "<span>°</span>";
     let forecastBar = document.querySelectorAll(
       ".bar.text-level .bar-container .forecast-bar"
@@ -206,38 +193,39 @@ async function getWeatherData(citynamesArray, wApiK) {
       // console.log(element);
       for (
         let y = 0;
-        y < citynamesArray[mySwiper.activeIndex].today.week.length;
+        y < citynamesArray[index].today.week.length;
         y++
       ) {
-        // console.log("y", y);
-        // console.log(citynamesArray[mySwiper.activeIndex].today.week[y].dayName);
-        // console.log(element
-        //     .getElementsByClassName("day")
-        //     [y].className.toString());
-        // console.log("-----------------------------------");
         let element2 = element.getElementsByClassName("day")[y];
 
         if (element2) {
           console.log(element2.children);
 
           element2.children[0].children[0].innerHTML = `${citynamesArray[
-            mySwiper.activeIndex
+            index
           ].today.week[y].dayName}`;
 
-          console.log(`${citynamesArray[mySwiper.activeIndex].today.week[y].wType}`)
+          console.log(`${citynamesArray[index].today.week[y].wType}`)
 
           element2.children[1].children[0].classList.toggle(
-            `${citynamesArray[mySwiper.activeIndex].today.week[y].wType}`
+            `${citynamesArray[index].today.week[y].wType}`
           );
 
           element2.children[2].children[0].innerHTML = `<p>${citynamesArray[
-            mySwiper.activeIndex
+            index
           ].today.week[y].min}<span>°</span>${citynamesArray[
-            mySwiper.activeIndex
+            index
           ].today.week[y].max}<span>°</span></p>`;
         }
       }
     }
+  };
+
+
+  let mySwiper = new Swiper(".swiper-container", virtualSliderOptions);
+
+  mySwiper.on("slideChange",  () => {
+    updateText(mySwiper.activeIndex);
   });
 }
 
