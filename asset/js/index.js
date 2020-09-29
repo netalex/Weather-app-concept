@@ -46,7 +46,6 @@ async function getWeatherData(citynamesArray, wApiK) {
 
     let forecastUrl = `${openWeatherBasepath}${openWeatherPath}${openWeatherEndPointF}?${openWeatherLat}=${city.lat}&${openWeatherLon}=${city.lon}&${openWeatherAppId}=${wApiK}&units=metric&exclude=minutely,hourly`;
     let wUrl = ``;
-    // console.log(`fetching city ${city.cityName}`);
     try {
       let res = await fetch(forecastUrl).then(response => response.json());
       resultArray.push(res);
@@ -91,39 +90,30 @@ async function getWeatherData(citynamesArray, wApiK) {
         switch (dayEl.weather[0].icon) {
           case "01d":
             icon = "wi-day-sunny";
-            // console.log(dayEl.weather[0].icon);
             break;
           case "02d":
             icon = "wi-day-cloudy";
-            // console.log(dayEl.weather[0].icon);
             break;
           case "03d":
             icon = "wi-cloud";
-            // console.log(dayEl.weather[0].icon);
             break;
           case "04d":
             icon = "wi-day-cloudy-windy";
-            // console.log(dayEl.weather[0].icon);
             break;
           case "09d":
             icon = "wi-day-storm-showers";
-            // console.log(dayEl.weather[0].icon);
             break;
           case "10d":
             icon = "wi-day-rain";
-            // console.log(dayEl.weather[0].icon);
             break;
           case "11d":
             icon = "wi-day-thunderstorm";
-            // console.log(dayEl.weather[0].icon);
             break;
           case "13d":
             icon = "wi-day-snow";
-            // console.log(dayEl.weather[0].icon);
             break;
           case "50d":
             icon = "wi-day-fog";
-            // console.log(dayEl.weather[0].icon);
             break;
         }
 
@@ -133,16 +123,15 @@ async function getWeatherData(citynamesArray, wApiK) {
           min: dayEl.temp.min,
           max: dayEl.temp.max
         });
+
       }
 
       citynamesArray[i].today = td;
+
     } catch (err) {
       console.log("error: ", err);
     }
   }
-  // console.log(resultArray);
-  // console.log(citynamesArray);
-
   const virtualSliderOptions = {
     speed: 1000,
     parallax: true,
@@ -214,17 +203,13 @@ async function getWeatherData(citynamesArray, wApiK) {
             y
           ].max.toFixed(1)}<span>°</span>`;
         }
-        // console.log('end update text internal for');
       }
-      // console.log('end update text external for');
     }
-    // console.log('end updatetext');
   };
 
   let mySwiper = new Swiper(".swiper-container", virtualSliderOptions);
 
   mySwiper.on("slideChange", () => {
-    // console.log('slide changed');
     updateText(mySwiper.activeIndex);
   });
 }
