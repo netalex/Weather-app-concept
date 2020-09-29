@@ -6,6 +6,8 @@
 	],
 	"settings": {
 		"emojisense.emojiDecoratorsEnabled": false,
-		"dotnetAcquisitionExtension.enableTelemetry": false
+		"dotnetAcquisitionExtension.enableTelemetry": false,
+		"editor.formatOnSaveMode": "modifications",
+		"editor.formatOnSave": false
 	}
 }
