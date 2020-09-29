@@ -15,8 +15,8 @@
 
 div {
   border: 1px solid red;
-}
- */
+} */
+
 body {
   font: 1rem/1.3 "Roboto", sans-serif;
   background: var(--bg_main);
@@ -80,7 +80,6 @@ body {
 .w-type,
 .min-max {
   font-weight: 300;
-  font-size: 1rem;
 }
 
 .min-max {
@@ -112,6 +111,7 @@ body {
   align-items: center;
 }
 .forecast-bar .day {
+  font-size: 0.9rem;
 }
 
 .forecast-bar .day > div {
@@ -120,7 +120,61 @@ body {
   justify-content: center;
 }
 .forecast-bar .day .temp-minmax-little {
-  font-size: 0.7rem;
+  font-size: 0.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .city-card {
+    top: 15%;
+  }
+
+  .city-name {
+    font-weight: bold;
+  }
+
+  .temp {
+    font-size: 10rem;
+    line-height: 9rem;
+  }
+  .temp span {
+    font-weight: 300;
+    font-size: 9rem;
+  }
+
+  .w-type,
+  .min-max {
+    font-weight: 300;
+    font-size: rem;
+  }
+
+  .min-max {
+    font-size: 1.4rem;
+  }
+
+  .gear {
+    right: 40vh;
+  }
+  .plus {
+    left: 40vh;
+  }
+
+  .bar {
+    width: 40%;
+    top: 60vh;
+  }
+  .forecast-bar {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .forecast-bar .day {
+    /* justify-content: start; */
+    margin: 1rem;
+  }
+  .forecast-bar .day,
+  .forecast-bar .day .temp-minmax-little {
+    font-size: 1.5rem;
+  }
 }
 
 /* background section
