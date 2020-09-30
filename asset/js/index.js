@@ -166,9 +166,19 @@ async function getWeatherData(citynamesArray, wApiK) {
         }
         for (let bkgI = 0; bkgI < citynamesArray.length; bkgI++) {
           slides.push(
-            `<img alt=${citynamesArray[bkgI].cityName} src=${images[
-              citynamesArray[bkgI].img
-            ]} data-id=${bkgI} id="bkg${bkgI}" class="background-img" width="${width}vh" height="${height}vh"></img>`
+            `
+
+            <img
+              alt=${citynamesArray[bkgI].cityName}
+              src=${images[citynamesArray[bkgI].img]}
+              data-id=${bkgI}
+              id="bkg${bkgI}"
+              class="background-img"
+              width="${width}vw"
+              height="${height}vh"
+            >
+            </img>`
+
           );
         }
         return slides;
