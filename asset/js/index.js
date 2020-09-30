@@ -160,11 +160,15 @@ async function getWeatherData(citynamesArray, wApiK) {
     virtual: {
       slides: (function() {
         let slides = [];
+        let width, height = 100;
+        if (window.matchMedia("(max-width: 768px)")){
+          width = 200;
+        }
         for (let bkgI = 0; bkgI < citynamesArray.length; bkgI++) {
           slides.push(
             `<img alt=${citynamesArray[bkgI].cityName} src=${images[
               citynamesArray[bkgI].img
-            ]} data-id=${bkgI} id="bkg${bkgI}" class="background-img"></img>`
+            ]} data-id=${bkgI} id="bkg${bkgI}" class="background-img" width="${width}vh" height="${height}vh"></img>`
           );
         }
         return slides;
@@ -214,17 +218,13 @@ async function getWeatherData(citynamesArray, wApiK) {
             y
           ].max.toFixed(1)}<span>°</span>`;
         }
-        // console.log('end update text internal for');
       }
-      // console.log('end update text external for');
     }
-    // console.log('end updatetext');
   };
 
   let mySwiper = new Swiper(".swiper-container", virtualSliderOptions);
 
   mySwiper.on("slideChange", () => {
-    // console.log('slide changed');
     updateText(mySwiper.activeIndex);
   });
 }
@@ -233,5 +233,5 @@ window.onload = function() {
   getWeatherData(
     defaultCityList,
     openWeatherApiKey
-  ).then(console.log("done"));
+  )
 };
