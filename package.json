@@ -14,7 +14,8 @@
   },
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "yarn clean && parcel build index.html",
+    "clean": "rm -r ./dist/* ./.cache"
   },
   "browserslist": [
     "last 1 Chrome version"
