@@ -46,5 +46,8 @@ A tua discrezione:
 
 --------------------------------------------<!-- markdownlint-capture -->
 
+
+
+--------------------------------------------<!-- markdownlint-capture -->
 le icone vengono da
-http://erikflowers.github.io/weather-icons/?utm_source=cdnjs&utm_medium=cdnjs_link&utm_campaign=cdnjs_library
+http://erikflowers.github.io/weather-icons/
