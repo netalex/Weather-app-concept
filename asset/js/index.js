@@ -198,7 +198,7 @@ async function getWeatherData(citynamesArray, wApiK) {
       citynamesArray[index].today.temp.toFixed(1) + "<span>°</span>";
     document.querySelector(".min-max").innerHTML =
       citynamesArray[index].today.min.toFixed(1) +
-      "<span>°</span>/" +
+      "<span>°</span> / " +
       citynamesArray[index].today.max.toFixed(1) +
       "<span>°</span>";
 

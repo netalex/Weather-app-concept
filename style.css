@@ -65,7 +65,7 @@ body {
 
 .w-type,
 .min-max {
-  font-weight: 300;
+  font-weight: 100;
 }
 
 .min-max {
@@ -108,6 +108,7 @@ body {
 }
 .forecast-bar .day .temp-minmax-little {
   font-size: 0.5rem;
+  font-weight: 100;
 }
 
 /* background section
