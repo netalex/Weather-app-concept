@@ -26,6 +26,10 @@ A tua discrezione:
 
 ___
 
+
+## prerequisiti:
+
+* [nodejs](https://nodejs.org/) installato globalmente
 ## Istruzioni:
 
 * `yarn`
@@ -38,7 +42,7 @@ se non si ha un server locale:
 
 ___
 
-Data una lista di città con associata una immagine di sfondo, il widget carica i dati metereologici relativi da Openweathermap.
+Data una lista di città con associata un'immagine di sfondo, il widget carica i dati meteorologici relativi da Openweathermap.
 
 - le icone vengono da [Weather Icons](http://erikflowers.github.io/weather-icons/) e da font awesome versione free.
 - Per i font il classico roboto di google.
